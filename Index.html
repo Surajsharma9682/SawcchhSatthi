@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleaning Products Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #2d89ef;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1em;
+      color: #f0f0f0;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 15px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .card h2 {
+      margin: 15px 0 5px;
+      font-size: 1.3em;
+      color: #333;
+    }
+    .card p {
+      font-size: 0.9em;
+      color: #666;
+      margin: 0 0 10px;
+    }
+    .price {
+      margin-top: 10px;
+      font-size: 18px;
+      color: green;
+      font-weight: bold;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: gray;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+    .discount {
+      display: inline-block;
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 5px;
+      margin-left: 5px;
+    }
+    button {
+      margin-top: 15px;
+      background: #2d89ef;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #1b5dbf;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2d89ef;
+      color: white;
+      font-size: 0.9em;
+      margin-top: 20px;
+    }
+    #qr-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🧴 Cleaning Products Menu</h1>
+  <p>Best prices on household essentials</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <img src="https://via.placeholder.com/300x180" alt="Floor Cleaner">
+    <h2>Floor Cleaner</h2>
+    <p>Kills 99.9% germs and keeps floors shiny.</p>
+    <div class="price">₹225 <span class="old-price">₹250</span> <span class="discount">10% OFF</span></div>
+    <button>Buy Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300x180" alt="Dish Wash Liquid">
+    <h2>Dish Wash Liquid</h2>
+    <p>Tough on grease, gentle on hands.</p>
+    <div class="price">₹102 <span class="old-price">₹120</span> <span class="discount">15% OFF</span></div>
+    <button>Buy Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300x180" alt="Glass Cleaner">
+    <h2>Glass Cleaner</h2>
+    <p>Streak-free shine for glass & mirrors.</p>
+    <div class="price">₹171 <span class="old-price">₹180</span> <span class="discount">5% OFF</span></div>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div id="qr-section">
+  <h3>📱 Scan to Visit</h3>
+  <div id="qrcode"></div>
+</div>
+
+<footer>
+  © 2025 Cleaning Shop. All rights reserved.
+</footer>
+
+<!-- QRCode.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  // Replace this with your actual hosted website link when deployed
+  const websiteURL = "https://yourwebsite.com";
+
+  // Generate QR Code
+  new QRCode(document.getElementById("qrcode"), {
+    text: websiteURL,
+    width: 150,
+    height: 150,
+  });
+</script>
+
+</body>
+</html>
